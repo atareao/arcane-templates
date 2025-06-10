@@ -10,7 +10,7 @@
             "id": "audiobookshelf",
             "name": "Audiobookshelf",
             "description": "Your books",
-            "version": "1.0.0",
+            "version": "1.0.1",
             "author": "atareao",
             "compose_url": "https://raw.githubusercontent.com/atareao/arcane-templates/main/audiobookshelf/compose.yml",
             "env_url": "https://raw.githubusercontent.com/atareao/arcane-templates/main/audiobookshelf/.env.example",
@@ -20,13 +20,13 @@
                 "webapp",
                 "postgres"
             ],
-            "updated_at": "2024-12-01T10:00:00Z"
+            "updated_at": "2025-06-10T06:00:00Z"
         },
         {
             "id": "cup",
             "name": "cup",
             "description": "Check docker image version",
-            "version": "1.0.0",
+            "version": "1.0.1",
             "author": "atareaao",
             "compose_url": "https://raw.githubusercontent.com/atareao/arcane-templates/main/cup/compose.yml",
             "env_url": "https://raw.githubusercontent.com/atareao/arcane-templates/main/cup/.env.example",
