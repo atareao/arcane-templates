@@ -1,0 +1,26 @@
+{
+    "$schema": "https://templates.arcane.ofkm.dev/schema.json",
+    "name": "Atareao Templates",
+    "description": "Docker templates for internal applications",
+    "version": "1.0.0",
+    "author": "Lorenzo Carbonell <a.k.a. atareao>",
+    "url": "https://github.com/atareao/arcane-templates",
+    "templates": [
+        {
+            "id": "audiobookshelf",
+            "name": "Audiobookshelf",
+            "description": "Company application stack with database",
+            "version": "1.0.0",
+            "author": "DevOps Team",
+            "compose_url": "https://raw.githubusercontent.com/atareao/arcane-templates/main/audiobookshelf/compose.yml",
+            "env_url": "https://raw.githubusercontent.com/atareao/arcane-templates/main/audiobookshelf/.env.example",
+            "documentation_url": "https://github.com/atareao/arcane-templates/tree/main/audiobookshelf",
+            "tags": [
+                "internal",
+                "webapp",
+                "postgres"
+            ],
+            "updated_at": "2024-12-01T10:00:00Z"
+        }
+    ]
+}
