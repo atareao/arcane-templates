@@ -2,7 +2,7 @@
     "$schema": "https://templates.arcane.ofkm.dev/schema.json",
     "name": "Atareao Templates",
     "description": "Docker templates for internal applications",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "author": "Lorenzo Carbonell <a.k.a. atareao>",
     "url": "https://github.com/atareao/arcane-templates",
     "templates": [
