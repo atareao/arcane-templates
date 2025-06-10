@@ -24,7 +24,7 @@
         },
         {
             "id": "cup",
-            "name": "cup",
+            "name": "Cup",
             "description": "Check docker image version",
             "version": "1.0.1",
             "author": "atareaao",
