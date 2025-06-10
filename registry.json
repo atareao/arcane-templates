@@ -21,6 +21,21 @@
                 "postgres"
             ],
             "updated_at": "2024-12-01T10:00:00Z"
+        },
+        {
+            "id": "cup",
+            "name": "cup",
+            "description": "Company application stack with database",
+            "version": "1.0.0",
+            "author": "atareaao",
+            "compose_url": "https://raw.githubusercontent.com/atareao/arcane-templates/main/cup/compose.yml",
+            "env_url": "https://raw.githubusercontent.com/atareao/arcane-templates/main/cup/.env.example",
+            "documentation_url": "https://github.com/atareao/arcane-templates/tree/main/cup",
+            "tags": [
+                "internal",
+                "docker"
+            ],
+            "updated_at": "2025-06-10T10:00:00Z"
         }
     ]
 }
