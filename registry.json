@@ -9,9 +9,9 @@
         {
             "id": "audiobookshelf",
             "name": "Audiobookshelf",
-            "description": "Company application stack with database",
+            "description": "Your books",
             "version": "1.0.0",
-            "author": "DevOps Team",
+            "author": "atareao",
             "compose_url": "https://raw.githubusercontent.com/atareao/arcane-templates/main/audiobookshelf/compose.yml",
             "env_url": "https://raw.githubusercontent.com/atareao/arcane-templates/main/audiobookshelf/.env.example",
             "documentation_url": "https://github.com/atareao/arcane-templates/tree/main/audiobookshelf",
@@ -25,7 +25,7 @@
         {
             "id": "cup",
             "name": "cup",
-            "description": "Company application stack with database",
+            "description": "Check docker image version",
             "version": "1.0.0",
             "author": "atareaao",
             "compose_url": "https://raw.githubusercontent.com/atareao/arcane-templates/main/cup/compose.yml",
