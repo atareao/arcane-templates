@@ -27,13 +27,27 @@
             "name": "Cup",
             "description": "Check docker image version",
             "version": "1.0.1",
-            "author": "atareaao",
+            "author": "atareao",
             "compose_url": "https://raw.githubusercontent.com/atareao/arcane-templates/main/cup/compose.yml",
             "env_url": "https://raw.githubusercontent.com/atareao/arcane-templates/main/cup/.env.example",
             "documentation_url": "https://github.com/atareao/arcane-templates/tree/main/cup",
             "tags": [
                 "internal",
                 "docker"
+            ],
+            "updated_at": "2025-06-10T06:00:00Z"
+        },
+        {
+            "id": "memos",
+            "name": "Memos",
+            "description": "Open Source, Self-hosted, Your Notes, Your Way",
+            "version": "1.0.1",
+            "author": "atareao",
+            "compose_url": "https://raw.githubusercontent.com/atareao/arcane-templates/main/memos/compose.yml",
+            "env_url": "https://raw.githubusercontent.com/atareao/arcane-templates/main/memos/.env.example",
+            "documentation_url": "https://github.com/atareao/arcane-templates/tree/main/memos",
+            "tags": [
+                "notes"
             ],
             "updated_at": "2025-06-10T06:00:00Z"
         }
