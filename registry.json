@@ -50,6 +50,20 @@
                 "notes"
             ],
             "updated_at": "2025-06-10T06:00:00Z"
+        },
+        {
+            "id": "rustical",
+            "name": "Rustical",
+            "description": "a CalDAV/CardDAV server",
+            "version": "1.0.0",
+            "author": "atareao",
+            "compose_url": "https://raw.githubusercontent.com/atareao/arcane-templates/main/rustical/compose.yml",
+            "env_url": "https://raw.githubusercontent.com/atareao/arcane-templates/main/rustical/.env.example",
+            "documentation_url": "https://github.com/atareao/arcane-templates/tree/main/rustical",
+            "tags": [
+                "caldav", "cardav", "calendar", "contacts"
+            ],
+            "updated_at": "2025-06-10T06:00:00Z"
         }
     ]
 }
