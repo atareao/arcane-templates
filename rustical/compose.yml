@@ -1,0 +1,30 @@
+services:
+  rustical:
+    image: ghcr.io/lennart-k/rustical
+    container_name: rustical
+    init: true
+    environment:
+      RUSTICAL_OIDC__NAME: "OpenId
+      RUSTICAL_OIDC__ISSUER: "https://openid.tuservidor.es"
+      RUSTICAL_OIDC__CLIENT_ID: "rustical"
+      RUSTICAL_OIDC__CLIENT_SECRET: "secret..."
+      RUSTICAL_OIDC__CLAIM_USERID: "preferred_username"
+      RUSTICAL_OIDC__SCOPES: '["openid", "profile", "groups"]'
+      RUSTICAL_OIDC__REQUIRE_GROUP: "app:rustical"
+      RUSTICAL_OIDC__ALLOW_SIGN_UP: "true"
+      RUSTICAL_FRONTEND__ALLOW_PASSWORD_LOGIN: "false"
+    volumes:
+      - rustical:/var/lib/rustical
+    restart: unless-stopped
+    networks:
+      - proxy
+    labels:
+      traefik.enable: "true"
+      traefik.http.services.rustical.loadbalancer.server.port: "4000"
+      traefik.http.routers.rustical.entrypoints: "https"
+      traefik.http.routers.rustical.rule: "Host(`${FQDN}`)"
+volumes:
+  rustical: {}
+networks:
+  proxy:
+    external: true
