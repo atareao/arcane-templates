@@ -64,6 +64,20 @@
                 "caldav", "cardav", "calendar", "contacts"
             ],
             "updated_at": "2025-06-10T06:00:00Z"
+        },
+        {
+            "id": "pocketid",
+            "name": "PocketID",
+            "description": "Pocket ID is a simple OIDC provider that allows users to authenticate with their passkeys to your services.",
+            "version": "1.0.0",
+            "author": "atareao",
+            "compose_url": "https://raw.githubusercontent.com/atareao/arcane-templates/main/pocketid/compose.yml",
+            "env_url": "https://raw.githubusercontent.com/atareao/arcane-templates/main/pocketid/.env.example",
+            "documentation_url": "https://github.com/atareao/arcane-templates/tree/main/pocketid",
+            "tags": [
+                "pocketid", "oidc", "sso"
+            ],
+            "updated_at": "2025-06-10T06:00:00Z"
         }
     ]
 }
