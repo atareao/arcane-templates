@@ -69,7 +69,7 @@
             "id": "syncthing",
             "name": "Syncthing",
             "description": "Programa de sincronización continua",
-            "version": "1.0.2",
+            "version": "1.0.3",
             "author": "atareao",
             "compose_url": "https://raw.githubusercontent.com/atareao/arcane-templates/main/syncthing/compose.yml",
             "env_url": "https://raw.githubusercontent.com/atareao/arcane-templates/main/syncthing/.env.example",
