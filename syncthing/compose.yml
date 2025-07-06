@@ -1,5 +1,5 @@
 services:
-  memos:
+  syncthing:
     image: syncthing/syncthing:latest
     hostname: syncthing
     container_name: syncthing
