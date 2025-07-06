@@ -66,6 +66,20 @@
             "updated_at": "2025-06-10T06:00:00Z"
         },
         {
+            "id": "syncthing",
+            "name": "Syncthing",
+            "description": "Programa de sincronización continua",
+            "version": "1.0.1",
+            "author": "atareao",
+            "compose_url": "https://raw.githubusercontent.com/atareao/arcane-templates/main/syncthing/compose.yml",
+            "env_url": "https://raw.githubusercontent.com/atareao/arcane-templates/main/syncthing/.env.example",
+            "documentation_url": "https://github.com/atareao/arcane-templates/tree/main/syncthing",
+            "tags": [
+                "notes"
+            ],
+            "updated_at": "2025-07-06T06:00:00Z"
+        },
+        {
             "id": "pocketid",
             "name": "PocketID",
             "description": "Pocket ID is a simple OIDC provider that allows users to authenticate with their passkeys to your services.",

@@ -1,0 +1,39 @@
+services:
+  memos:
+    image: syncthing/syncthing:latest
+    hostname: syncthing
+    container_name: syncthing
+    restart: unless-stopped
+    init: true
+    volumes:
+      - syncthing:/var/syncthing
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    networks:
+      - proxy
+    healthcheck:
+      test: curl -fkLsS -m 2 127.0.0.1:8384/rest/noauth/health | grep -o --color=never OK || exit 1
+      interval: 1m
+      timeout: 10s
+      retries: 3
+    labels:
+      traefik.enable: "true"
+      traefik.http.services.syncthing.loadbalancer.server.port: "8384"
+      traefik.http.routers.syncthing.entrypoints: "https"
+      traefik.http.routers.syncthing.rule: "Host(`${FQDN}`)"
+      traefik.http.routers.syncthing.middlewares: "oidc-auth@file"
+      #
+      traefik.tcp.routers.syncthing-tcp.rule: "HostSNI(`*`)"
+      traefik.tcp.routers.syncthing-tcp.entrypoints: syncthing_tcp
+      traefik.tcp.routers.syncthing-tcp.loadbalancer.server.port: 22000
+      #
+      traefik.udp.routers.syncthing-udp.rule: "HostSNI(`*`)"
+      traefik.udp.routers.syncthing-udp.entrypoints: syncthing_udp
+      traefik.udp.routers.syncthing-udp.loadbalancer.server.port: 22000
+
+volumes:
+  syncthing: {}
+
+networks:
+  proxy:
+    external: true
