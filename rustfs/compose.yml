@@ -10,9 +10,9 @@ services:
       - proxy
     labels:
       traefik.enable: "true"
-      traefik.http.services.rustical.loadbalancer.server.port: "7000"
-      traefik.http.routers.rustical.entrypoints: "https"
-      traefik.http.routers.rustical.rule: "Host(`${FQDN}`)"
+      traefik.http.services.rustfs.loadbalancer.server.port: "7000"
+      traefik.http.routers.rustfs.entrypoints: "https"
+      traefik.http.routers.rustfs.rule: "Host(`${FQDN}`)"
 volumes:
   data: {}
 networks:
