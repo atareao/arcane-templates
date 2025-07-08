@@ -83,7 +83,7 @@
             "id": "rustfs",
             "name": "RustFS",
             "description": "RustFS is a simple, efficient, distributed object storage solution",
-            "version": "1.0.4",
+            "version": "1.0.5",
             "author": "atareao",
             "compose_url": "https://raw.githubusercontent.com/atareao/arcane-templates/main/rustfs/compose.yml",
             "env_url": "https://raw.githubusercontent.com/atareao/arcane-templates/main/rustfs/.env.example",
