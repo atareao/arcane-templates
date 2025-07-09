@@ -1,0 +1,29 @@
+services:
+  tududi:
+    image: chrisvel/tududi
+    container_name: tududi
+    restart: unless-stopped
+    init: true
+    environment:
+      TUDUDI_USER_EMAIL: "$TUDUDI_USER_EMAIL"
+      TUDUDI_USER_PASSWORD: "$TUDUDI_USER_PASSWORD"
+      TUDUDI_SESSION_SECRET: "$TUDUDI_SESSION_SECRET"
+      TUDUDI_INTERNAL_SSL_ENABLED: "$TUDUDI_INTERNAL_SSL_ENABLED"
+      TUDUDI_ALLOWED_ORIGINS: "$TUDUDI_ALLOWED_ORIGINS"
+    volumes:
+      - db:/app/backend/db
+      - uploads:/app/backend/uploads
+    networks:
+      - proxy
+    labels:
+      traefik.enable: "true"
+      traefik.http.services.tududi.loadbalancer.server.port: "3002"
+      traefik.http.routers.tududi.entrypoints: "https"
+      traefik.http.routers.tududi.rule: "Host(`${FQDN}`)"
+volumes:
+  db: {}
+  uploads: {}
+networks:
+  proxy:
+    external: true
+

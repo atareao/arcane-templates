@@ -94,6 +94,20 @@
             "updated_at": "2025-07-06T07:00:00Z"
         },
         {
+            "id": "tududi",
+            "name": "tududi",
+            "description": "Task Management Made Simple",
+            "version": "1.0.0",
+            "author": "atareao",
+            "compose_url": "https://raw.githubusercontent.com/atareao/arcane-templates/main/tududi/compose.yml",
+            "env_url": "https://raw.githubusercontent.com/atareao/arcane-templates/main/tududi/.env.example",
+            "documentation_url": "https://github.com/atareao/arcane-templates/tree/main/tududi",
+            "tags": [
+                "tasks", "todo", "task-management", "productivity"
+            ],
+            "updated_at": "2025-07-06T07:00:00Z"
+        },
+        {
             "id": "pocketid",
             "name": "PocketID",
             "description": "Pocket ID is a simple OIDC provider that allows users to authenticate with their passkeys to your services.",
