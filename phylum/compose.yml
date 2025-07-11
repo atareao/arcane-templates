@@ -17,10 +17,10 @@ services:
       - internal
       - proxy
     labels:
-      traefik.enable: true
-      traefik.http.services.phylum.loadbalancer.server.port: 2448
-      traefik.http.routers.phylum.entrypoints: https
-      traefik.http.routers.phylum.rule: Host(`${FQDN}`)
+      traefik.enable: "true"
+      traefik.http.services.phylum.loadbalancer.server.port: "2448"
+      traefik.http.routers.phylum.entrypoints: "https"
+      traefik.http.routers.phylum.rule: "Host(`${FQDN}`)"
 
 
   db:
