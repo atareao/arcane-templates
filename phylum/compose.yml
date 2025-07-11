@@ -3,7 +3,6 @@ services:
     container_name: phylum
     image: shroff12/phylum
     restart: unless-stopped
-    init: true
     volumes:
       - storage:/app/storage
     env_file:
@@ -27,6 +26,7 @@ services:
     container_name: phylum_db
     image: postgres:17-alpine
     restart: unless-stopped
+    init: true
     environment:
       POSTGRES_DB: ${PHYLUM_DB_NAME}
       POSTGRES_USER: ${PHYLUM_DB_USER}
