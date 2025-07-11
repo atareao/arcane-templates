@@ -108,6 +108,20 @@
             "updated_at": "2025-07-06T07:00:00Z"
         },
         {
+            "id": "phylum",
+            "name": "Phylum",
+            "description": "Phylum is a self-hosted file storage platform with offline-first web and native clients, meant as a replacement for Google Drive, Dropbox, etc.",
+            "version": "1.0.0",
+            "author": "atareao",
+            "compose_url": "https://raw.githubusercontent.com/atareao/arcane-templates/main/phylum/compose.yml",
+            "env_url": "https://raw.githubusercontent.com/atareao/arcane-templates/main/phylum/.env.example",
+            "documentation_url": "https://github.com/atareao/arcane-templates/tree/main/phylum",
+            "tags": [
+                "file-storage", "cloud-storage", "sync", "files"
+            ],
+            "updated_at": "2025-07-11T07:00:00Z"
+        },
+        {
             "id": "pocketid",
             "name": "PocketID",
             "description": "Pocket ID is a simple OIDC provider that allows users to authenticate with their passkeys to your services.",
