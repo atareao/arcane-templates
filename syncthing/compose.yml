@@ -5,6 +5,10 @@ services:
     container_name: syncthing
     restart: unless-stopped
     init: true
+    environment:
+      PUID: "1000"
+      PGID: "1000"
+      DOMAIN: "sync.territoriolinux.es"
     volumes:
       - syncthing:/var/syncthing
       - /etc/timezone:/etc/timezone:ro
@@ -18,21 +22,65 @@ services:
       retries: 3
     labels:
       traefik.enable: "true"
-      traefik.http.services.syncthing.loadbalancer.server.port: "8384"
+      traefik.http.routers.syncthing.rule: "Host(`${FQDN_SYNC}`)"
       traefik.http.routers.syncthing.entrypoints: "https"
-      traefik.http.routers.syncthing.rule: "Host(`${FQDN}`)"
+      traefik.http.services.syncthing.loadbalancer.server.port: "8384"
       traefik.http.routers.syncthing.middlewares: "oidc-auth@file"
-      #
-      traefik.tcp.routers.syncthing-tcp.rule: "HostSNI(`*`)"
-      traefik.tcp.routers.syncthing-tcp.entrypoints: syncthing_tcp
-      traefik.tcp.routers.syncthing-tcp.loadbalancer.server.port: "22000"
-      #
-      traefik.udp.routers.syncthing-udp.rule: "HostSNI(`*`)"
-      traefik.udp.routers.syncthing-udp.entrypoints: syncthing_udp
-      traefik.udp.routers.syncthing-udp.loadbalancer.server.port: "22000"
+
+  discosrv:
+    image: syncthing/discosrv
+    container_name: disco
+    hostname: disco
+    environment:
+      - PUID=1000
+      - PGID=1000
+    restart: unless-stopped
+    init: true
+    entrypoint: ["/bin/entrypoint.sh", "/bin/stdiscosrv", "--http", "--compression", "--debug", "--cert=/certs/disco.territoriolinux.es/cert.pem", "--key=/certs/disco.territoriolinux.es/key.pem"]
+    volumes:
+      - disco:/var/stdiscosrv
+      - certs:/certs
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    networks:
+      - proxy
+    labels:
+      traefik.enable: "true"
+      traefik.http.routers.disco.rule: "Host(`${FQDN_DISCO}`)"
+      traefik.http.routers.disco.entrypoints: "https"
+      traefik.http.services.disco.loadbalancer.server.port: "8443"
+      traefik.http.routers.disco.tls.options: "discosrv@file"
+      traefik.http.middlewares.disco.passtlsclientcert.pem: "true"
+      traefik.http.routers.disco.middlewares: "disco,htransformation@file"
+
+  relaysrv:
+    image: syncthing/relaysrv
+    container_name: relaysrv
+    hostname: relaysrv
+    environment:
+      - PUID=1000
+      - PGID=1000
+    restart: unless-stopped
+    entrypoint: ["/bin/entrypoint.sh", "/bin/strelaysrv", "-pools", ""]
+    volumes:
+      - data:/var/strelaysrv
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    networks:
+      - proxy
+    labels:
+      traefik.enable: "true"
+      traefik.tcp.routers.relaysrv.rule: "HostSNI(`*`)"
+      traefik.tcp.routers.relaysrv.entrypoints: "relay"
+      traefik.tcp.routers.relaysrv.service: "relaysrv"
+      traefik.tcp.services.relaysrv.loadbalancer.server.port: "22067"
 
 volumes:
   syncthing: {}
+  disco: {}
+  data: {}
+  certs:
+    external: true
 
 networks:
   proxy:
