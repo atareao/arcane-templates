@@ -108,6 +108,20 @@
             "updated_at": "2025-07-06T07:00:00Z"
         },
         {
+            "id": "pairdrop",
+            "name": "Pairdrp",
+            "description": "File sharing on your local network that works on all platforms.",
+            "version": "1.0.0",
+            "author": "atareao",
+            "compose_url": "https://raw.githubusercontent.com/atareao/arcane-templates/main/pairdrop/compose.yml",
+            "env_url": "https://raw.githubusercontent.com/atareao/arcane-templates/main/pairdrop/.env.example",
+            "documentation_url": "https://github.com/atareao/arcane-templates/tree/main/pairdrop",
+            "tags": [
+                "file-sharing", "local-network", "cross-platform", "files"
+            ],
+            "updated_at": "2025-07-11T07:00:00Z"
+        },
+        {
             "id": "phylum",
             "name": "Phylum",
             "description": "Phylum is a self-hosted file storage platform with offline-first web and native clients, meant as a replacement for Google Drive, Dropbox, etc.",
