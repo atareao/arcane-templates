@@ -8,7 +8,7 @@ services:
     environment:
       PUID: "1000"
       PGID: "1000"
-      DOMAIN: "sync.territoriolinux.es"
+      DOMAIN: "${FQDN_SYNC}"
     volumes:
       - syncthing:/var/syncthing
       - /etc/timezone:/etc/timezone:ro
@@ -36,7 +36,7 @@ services:
       - PGID=1000
     restart: unless-stopped
     init: true
-    entrypoint: ["/bin/entrypoint.sh", "/bin/stdiscosrv", "--http", "--compression", "--debug", "--cert=/certs/disco.territoriolinux.es/cert.pem", "--key=/certs/disco.territoriolinux.es/key.pem"]
+    entrypoint: ["/bin/entrypoint.sh", "/bin/stdiscosrv", "--http", "--compression", "--debug", "--cert=/certs/${FQDN_DISCO}/cert.pem", "--key=/certs/${FQDN_DISCO}/key.pem"]
     volumes:
       - disco:/var/stdiscosrv
       - certs:/certs
