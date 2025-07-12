@@ -109,7 +109,7 @@
         },
         {
             "id": "pairdrop",
-            "name": "Pairdrp",
+            "name": "Pairdrop",
             "description": "File sharing on your local network that works on all platforms.",
             "version": "1.0.0",
             "author": "atareao",
