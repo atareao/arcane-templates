@@ -1,0 +1,23 @@
+services:
+  zen:
+    image: ghcr.io/sheshbabu/zen/zen:latest
+    container_name: zen
+    restart: unless-stopped
+    init: true
+    volumes:
+      - data:/data
+      - images:/images
+    networks:
+      - proxy
+    labels:
+      traefik.enable: "true"
+      traefik.http.services.zen.loadbalancer.server.port: "8080"
+      traefik.http.routers.zen.entrypoints: "https"
+      traefik.http.routers.zen.rule: "Host(`${FQDN}`)"
+
+volumes:
+  data: {}
+  images: {}
+networks:
+  proxy:
+    external: true
