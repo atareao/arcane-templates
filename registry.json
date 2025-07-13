@@ -122,6 +122,20 @@
             "updated_at": "2025-07-11T07:00:00Z"
         },
         {
+            "id": "zen",
+            "name": "Zen",
+            "description": "Minimal Notes App",
+            "version": "1.0.0",
+            "author": "atareao",
+            "compose_url": "https://raw.githubusercontent.com/atareao/arcane-templates/main/zen/compose.yml",
+            "env_url": "https://raw.githubusercontent.com/atareao/arcane-templates/main/zen/.env.example",
+            "documentation_url": "https://github.com/atareao/arcane-templates/tree/main/zen",
+            "tags": [
+                "notes", "minimalist", "webapp"
+            ],
+            "updated_at": "2025-07-13T07:00:00Z"
+        },
+        {
             "id": "phylum",
             "name": "Phylum",
             "description": "Phylum is a self-hosted file storage platform with offline-first web and native clients, meant as a replacement for Google Drive, Dropbox, etc.",
