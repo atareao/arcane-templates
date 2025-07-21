@@ -136,6 +136,20 @@
             "updated_at": "2025-07-13T07:00:00Z"
         },
         {
+            "id": "filebrowser-quantum",
+            "name": "FileBrowser Quantum",
+            "description": " The best free self-hosted web-based file manager. ",
+            "version": "1.0.0",
+            "author": "atareao",
+            "compose_url": "https://raw.githubusercontent.com/atareao/arcane-templates/main/quantum/compose.yml",
+            "env_url": "https://raw.githubusercontent.com/atareao/arcane-templates/main/quantum/.env.example",
+            "documentation_url": "https://github.com/atareao/arcane-templates/tree/main/quantum",
+            "tags": [
+                "file-storage", "cloud-storage", "sync", "files"
+            ],
+            "updated_at": "2025-07-21T07:00:00Z"
+        },
+        {
             "id": "phylum",
             "name": "Phylum",
             "description": "Phylum is a self-hosted file storage platform with offline-first web and native clients, meant as a replacement for Google Drive, Dropbox, etc.",
