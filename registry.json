@@ -150,6 +150,20 @@
             "updated_at": "2025-07-21T07:00:00Z"
         },
         {
+            "id": "sftpgo",
+            "name": "SFTPGo",
+            "description": "Fully featured and highly configurable SFTP server with HTTP/S Web UI and optional FTP/S and WebDAV",
+            "version": "1.0.0",
+            "author": "atareao",
+            "compose_url": "https://raw.githubusercontent.com/atareao/arcane-templates/main/sftpgo/compose.yml",
+            "env_url": "https://raw.githubusercontent.com/atareao/arcane-templates/main/sftpgo/.env.example",
+            "documentation_url": "https://github.com/atareao/arcane-templates/tree/main/sftpgo",
+            "tags": [
+                "sftp", "ftp", "webdav", "file-transfer", "files"
+            ],
+            "updated_at": "2025-07-26T07:00:00Z"
+        },
+        {
             "id": "phylum",
             "name": "Phylum",
             "description": "Phylum is a self-hosted file storage platform with offline-first web and native clients, meant as a replacement for Google Drive, Dropbox, etc.",
