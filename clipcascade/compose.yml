@@ -1,0 +1,66 @@
+services:
+  clipcascade:
+    image: sathvikrao/clipcascade:latest
+    container_name: clipcascade
+    depends_on:
+      - postgresdb
+    restart: always
+    volumes:
+      - ./logs:/logs
+    networks:
+      - internal
+      - proxy
+    environment:
+      # CC_ALLOWED_ORIGINS: https://clipcascade.example.com
+      CC_P2P_ENABLED: true
+      CC_P2P_STUN_URL: stun:stun.l.google.com:19302
+      CC_SIGNUP_ENABLED: true
+      CC_MAX_USER_ACCOUNTS: -1
+      CC_ACCOUNT_PURGE_TIMEOUT_SECONDS: 63115200
+      CC_SESSION_TIMEOUT: 525960m
+      CC_PORT: 8080
+      CC_SERVER_LOGGING_LEVEL: INFO
+      CC_MAX_UNIQUE_IP_ATTEMPTS: 15
+      CC_MAX_ATTEMPTS_PER_IP: 30
+      CC_LOCK_TIMEOUT_SECONDS: 120
+      CC_LOCK_TIMEOUT_SCALING_FACTOR: 2
+      CC_BFA_CACHE_ENABLED: true # Disabling if running on low RAM
+      CC_BFA_TRACKER_CACHE_MAX_JVM_ENTRIES: 50
+      CC_BFA_TRACKER_CACHE_RAM_PERCENTAGE: 10
+      CC_BFA_TRACKER_CACHE_DISK_PERCENTAGE: 40
+      CC_SERVER_DB_URL: "jdbc:postgresql://postgresdb:5432/${POSTGRES_DB}"
+      CC_SERVER_DB_USERNAME: "${POSTGRES_USER}"
+      CC_SERVER_DB_PASSWORD: "${POSTGRES_PASSWORD}"
+      CC_SERVER_DB_DRIVER: org.postgresql.Driver
+      CC_SERVER_DB_HIBERNATE_DIALECT: org.hibernate.dialect.PostgreSQLDialect
+      CC_SERVER_LOG_HISTORY_MAX_DAYS: 30
+      CC_SERVER_LOG_MAX_CAPACITY: 3GB
+      CC_LOG_BRUTE_FORCE_TRACKER_ENABLED: true
+      CC_MAX_WS_CONNECTIONS_PER_USER: 10
+      CC_MAX_WS_GLOBAL_CONNECTIONS: -1
+    labels:
+      traefik.enable: "true"
+      traefik.http.services.clip.loadbalancer.server.port: "8080"
+      traefik.http.routers.clip.entrypoints: "https"
+      traefik.http.routers.clip.rule: "Host(`${FQDN}`)"
+
+  postgresdb:
+    image: postgres:latest
+    container_name: postgresdb
+    restart: always
+    environment:
+      POSTGRES_USER: "${POSTGRES_USER}"
+      POSTGRES_PASSWORD: "${POSTGRES_PASSWORD}"
+      POSTGRES_DB: "${POSTGRES_DB}"
+    networks:
+      - internal
+    volumes:
+      - data:/var/lib/postgresql/data
+
+volumes:
+  data: {}
+
+networks:
+  internal:
+  proxy:
+    external: true

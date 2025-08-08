@@ -178,6 +178,20 @@
             "updated_at": "2025-07-26T07:00:00Z"
         },
         {
+            "id": "clipcascade",
+            "name": "ClipCascade",
+            "description": "ClipCascade is a lightweight, open-source utility that automatically syncs your clipboard across multiple devices",
+            "version": "1.0.0",
+            "author": "atareao",
+            "compose_url": "https://raw.githubusercontent.com/atareao/arcane-templates/main/clipcascade/compose.yml",
+            "env_url": "https://raw.githubusercontent.com/atareao/arcane-templates/main/clipcascade/.env.example",
+            "documentation_url": "https://github.com/atareao/arcane-templates/tree/main/clipcascade",
+            "tags": [
+                "clipboard", "sync", "files"
+            ],
+            "updated_at": "2025-08-08T07:00:00Z"
+        },
+        {
             "id": "phylum",
             "name": "Phylum",
             "description": "Phylum is a self-hosted file storage platform with offline-first web and native clients, meant as a replacement for Google Drive, Dropbox, etc.",
